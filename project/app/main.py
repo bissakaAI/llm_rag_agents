@@ -19,7 +19,7 @@ class userinputmodel(BaseModel):
 
 
 @app.post("/invoke_agent")
-def invoke_agent(user_input: userinputmodel):
+async def invoke_agent(user_input: userinputmodel):
     
     answer=run_agent(user_input=user_input.user_input)
     return {"answer":answer}
